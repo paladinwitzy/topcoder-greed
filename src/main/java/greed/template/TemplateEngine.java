@@ -50,7 +50,7 @@ public class TemplateEngine {
         modelStack.push(model);
         String output = noStackRender(template);
         modelStack.pop();
-        return output.replaceAll("\\s+", "_");
+        return output;
     }
 
     private String noStackRender(String template) {

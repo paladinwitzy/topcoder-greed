@@ -330,7 +330,7 @@ public class Greed {
             // Output to file
             if (template.getOutputFile() != null) {
                 String filePath = renderedCodeRoot(config) + "/" +
-                        currentEngine.render(template.getOutputFile(), currentModel);
+                        currentEngine.render(template.getOutputFile(), currentModel).replaceAll("\\s+", "_");
                 String fileFolder = FileSystem.getParentPath(filePath);
                 if (!FileSystem.exists(fileFolder)) {
                     FileSystem.createFolder(fileFolder);
