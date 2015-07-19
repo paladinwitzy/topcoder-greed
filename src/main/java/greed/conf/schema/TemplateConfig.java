@@ -73,9 +73,9 @@ public class TemplateConfig {
             fullName.append(name);
         if (ext != null && ext.length() > 0)
             fullName.append('.').append(ext);
-        if (fullName.length() > 0)
-            return fullName.toString();
-        else
+        if (fullName.length() > 0) {
+            return fullName.toString().replaceAll("\\s+", "_");
+        } else
             return null;
     }
 
